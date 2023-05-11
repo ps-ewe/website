@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+  background: url(https://images5.alphacoders.com/495/thumb-1920-495521.jpg);
+  background-size : cover;
+  background-repeat :no-repeat;
+  background-position: center top;
+  
+}
+
+
+h1 {
+  color: white;
+  text-align: center;
+  text-decoration: underline grey ;
+  font-family: Lucida Handwriting ;
+  font-size: 45px
+}
+p{
+  color : white;
+  font-size : 25px
+}
+div{
+  color : white; 
+  font-size : 25px
+}
+span{
+  font-size : 30px
+}
+        </style>
+        <script>
+            function calculate() {
+  var qty_one = document.getElementById("qty_one").value;
+  var qty_two = document.getElementById("qty_two").value;
+  var qty_three = document.getElementById("qty_three").value;
+            var total = ( qty_two/ qty_one) * qty_three;
+document.getElementById("ANSWER").innerHTML = total;}
+document.getElementById("calculate").onclick = function() {calculate()};
+        </script>
+
+    </head>
+    <body>
+        <h1>Dreisatz</h1>
+<p>Füllen Sie die ersten drei Felder aus.</p>
+<p>Mit 'Berechnen' kannst du die viertal zahl berechnen. Die viertal zahl ist 'die drite zahl mal dem Verhältnis der ersten und zweiten zahl.<p/>
+<div class = input>
+1.<input type="number" class="qty" value=0 id="qty_one"/>
+</div>
+<div class = input>
+2.<input type="number" class="qty" value=0 id="qty_two"/>
+</div>
+<div class = input>
+3.<input type="number" class="qty" value=0 id="qty_three"/>
+</div>  
+<div> Antwort = <span id = "ANSWER">0<span>
+</div>
+<button id="calculate">Berechnen</button>
+    </body>
+    <script>
+        function calculate() {
+  var qty_one = document.getElementById("qty_one").value;
+  var qty_two = document.getElementById("qty_two").value;
+  var qty_three = document.getElementById("qty_three").value;
+
+
+var total = ( qty_two/ qty_one) * qty_three;
+document.getElementById("ANSWER").innerHTML = total;
+}
+document.getElementById("calculate").onclick = function() {calculate()};
+    </script>
+</html>

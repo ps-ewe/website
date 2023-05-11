@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1{
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              color : white;
+            }
+
+            body{
+                background:url(https://rare-gallery.com/uploads/posts/2026-galaxy__hd_galaxy_wallpaper_4k.jpg)no-repeat center fixed;
+                background-size: cover;
+
+            }
+
+            .image1{
+                position: relative;
+                left: 1022px;
+                top: 465px;
+                width: 50px;
+                height: 50px;
+                animation-name: rotation;
+                animation-duration: 3s;
+                animation-iteration-count: infinite;
+                z-index: 5;
+
+            }
+
+            @keyframes rotation {
+                from {transform: rotate(0deg);}
+                to {transform: rotate(360deg);}
+            }
+
+            #blackhole{
+                position: relative;
+                border-radius: 80%;
+                border-color:transparent;
+                animation-name: rotation;
+                animation-duration: 0.07s;
+                animation-iteration-count: infinite;
+                z-index: 10
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+      <h1>
+        Let the black hole overlay with the spinning calculator, you can control the movement of the black hole with the arrow key on your keyboard.
+      </h1>
+
+        <p>
+          <img src="http://cdn.onlinewebfonts.com/svg/img_521113.png" class ="image1" id = "img">
+        </p>
+
+        <div></div>
+
+        <img src="https://cff2.earth.com/uploads/2022/05/15085328/Low-Res_Simulation_AccretionDisk_SgrAStar.jpg2_.png" width= "100" length= "100px" id ="blackhole"/>
+
+        <script>
+            let left_offset = 0;
+            let top_offset = 0;
+            document.onkeydown = function (event) {
+              let img = document.getElementById("blackhole");
+              let img1 = document.getElementById("img");
+              let overlap = checkOverlap(img, img1);
+
+
+              switch (event.keyCode) {
+                case 37:
+                  // Move left
+                  left_offset -= 5;
+                  break;
+                case 38:
+                  // Move up
+                  top_offset -= 5;
+                  break;
+                case 39:
+                  // Move right
+                  left_offset += 5;
+                  break;
+                case 40:
+                  // Move down
+                  top_offset += 5;
+                  break;
+              }
+              img.style.left = `${left_offset}px`;
+              img.style.top = `${top_offset}px`;
+
+              if (overlap) {
+              window.location.href = "https://project-shane.kanti-informatik.ch/index1.html";
+              }
+            };
+
+            function checkOverlap(img1, img2) {
+              let rect1 = img1.getBoundingClientRect();
+              let rect2 = img2.getBoundingClientRect();
+              return !(
+                rect1.right < rect2.left ||
+                rect1.left > rect2.right ||
+                rect1.bottom < rect2.top ||
+                rect1.top > rect2.bottom
+              );
+            }
+        </script>   
+
+    </body>
+</html>
